@@ -12,3 +12,5 @@ result = DatabaseConnection.exec_params(sql, [])
 result.each do |record|
   p record
 end
+
+##### THE ABOVE IS ALL COPIED CODE, EDIT TO MAKE PROPER #####
