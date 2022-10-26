@@ -49,6 +49,7 @@ INSERT INTO "public"."albums" ("title", "release_year", "artist_id") VALUES
 ('Baltimore', 1978, 4),
 ( 'Here Comes the Sun', 1971, 4),
 ( 'Fodder on My Wings', 1982, 4),
+( 'Album for Robin', 2022, 3),
 ( 'Ring Ring', 1973, 2);
 
 INSERT INTO "public"."artists" ("name", "genre") VALUES
