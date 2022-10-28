@@ -32,7 +32,7 @@ class ArtistRepo
             artist.genre = art['genre']
             artists << artist
           end
-          artists
+        artists
     end
 
 end
