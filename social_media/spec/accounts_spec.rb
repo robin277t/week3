@@ -55,11 +55,27 @@ RSpec.describe AccountsRepo do
       expect(repo.find('3')[0].username).to eq 'Jeff'
     end
 
+    
     it "deletes record from accounts" do
       repo = AccountsRepo.new
       repo.delete("David")
-      expect{repo.find('1')[0].username}.to raise_error
+      expect{repo.find('1')[0].username}.to raise_error "no record!!!!"
     end
+    
+    it "deletes and then creates record from accounts" do
+      repo = AccountsRepo.new
+      repo.delete("David")
+      repo.create("David","dave@gmail.com")
+      expect(repo.find2('David')[0][1]).to eq "David"
+      #expect{repo.find2('David')[0].username}.to raise_error "no record!"
+    end
+    
+    it "deletes record from accounts" do
+      repo = AccountsRepo.new
+      repo.delete("David")
+      expect{repo.find2('1')[0].username}.to raise_error "no record!"
+    end
+
 
     it "update email address" do
       repo = AccountsRepo.new
@@ -68,3 +84,4 @@ RSpec.describe AccountsRepo do
     end
 
   end
+

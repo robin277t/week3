@@ -39,7 +39,7 @@ RSpec.describe PostsRepo do
         post = PostsRepo.new
         post.delete("My thoughts")
         post.delete("A response to whatever")
-        expect{post.find(2)[1]}.to raise_error
+        expect{post.find(2)[1]}.to raise_error "no record"
     end
 
 

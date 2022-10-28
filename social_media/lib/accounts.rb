@@ -35,6 +35,7 @@ class AccountsRepo
 
     def find(acc)
         results = DatabaseConnection.exec_params('SELECT * FROM accounts WHERE id = $1', [acc])
+        fail "no record!!!!" unless results.ntuples > 0
         accounts = []
         results.each do |record|
             account = Account.new
@@ -43,7 +44,14 @@ class AccountsRepo
             account.email = record['email'] 
             accounts << account
           end
-          return accounts
+        return accounts
+    end
+
+    def find2(acc_username)
+        results = DatabaseConnection.exec_params("select * from accounts where username = $1",[acc_username])
+        fail "no record!" unless results.ntuples > 0 
+        results.values
+        
     end
 
 

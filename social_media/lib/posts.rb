@@ -10,8 +10,10 @@ class PostsRepo
 
 
     def find(pst_id)
-        result = DatabaseConnection.exec_params("select * from posts where account_id = $1",[pst_id])
-        #fail "no record found" unless result[0] = true
+        results = DatabaseConnection.exec_params("select * from posts where account_id = $1",[pst_id])
+        fail "no record" unless results.ntuples > 0 
+        results
+
     end
 
 
