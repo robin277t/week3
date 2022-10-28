@@ -1,4 +1,5 @@
-require 'repo_music'
+$LOAD_PATH << "lib"
+require 'Albums'
 require 'pg'
 
 RSpec.describe "what" do
